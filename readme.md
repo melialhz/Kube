@@ -1,7 +1,7 @@
 
 ### Projet de Milia LAHOUAZI
 
-[kube-screen.png]
+![kube-screen](kube-screen.png)
 
 Ce projet consiste en la mise en place d'une architecture microservices conteneurisée, déployée sur un cluster Kubernetes local via Minikube. L'application suit une stack MERN simplifiée (MongoDB, Express, React).
 
