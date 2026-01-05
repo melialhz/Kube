@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deploy
+  namespace: projet-etudiant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: api
+        image: tonpseudo/k8s-back:v1 # <--- REMPLACE ICI
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DB_URL
+          value: "mongodb://admin:password123@mongodb-service:27017/admin"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: projet-etudiant
+spec:
+  selector:
+    app: backend
+  ports:
+  - port: 5000
+    targetPort: 5000
+  type: ClusterIP

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: projet-etudiant
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-secret
+  namespace: projet-etudiant
+type: Opaque
+data:
+  # 'admin' en base64
+  mongo-user: YWRtaW4=
+  # 'password123' en base64
+  mongo-pass: cGFzc3dvcmQxMjM=

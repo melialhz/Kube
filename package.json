@@ -1,0 +1,13 @@
+{
+  "name": "kube-milia",
+  "version": "1.0.0",
+  "description": "Ce projet consiste en la mise en place d'une architecture microservices conteneurisée, déployée sur un cluster Kubernetes local via Minikube. L'application suit une stack MERN simplifiée (MongoDB, Express, React).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
