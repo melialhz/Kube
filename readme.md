@@ -24,13 +24,6 @@ Dockerisation : Chaque service possède son propre Dockerfile pour garantir la p
 
 Secret Map : Les identifiants MongoDB ne sont pas codés en dur. Ils sont stockés dans un objet Secret Kubernetes (encodé en Base64), assurant la sécurité des données sensibles.
 
-Exposition des services :
-
-- ClusterIP : Pour la communication interne sécurisée (Back ↔ DB).
-
-- NodePort : Pour un accès direct au frontend via le port 30001.
-
-- Ingress : Utilisation d'un contrôleur NGINX pour router le trafic via le nom de domaine mon-projet.local.
 
 
 ## Projet Cluster Kubernetes - Application MERN
@@ -64,7 +57,6 @@ Le déploiement a été finalisé sur un environnement Minikube (driver Docker).
 
 Tunneling : Sur macOS, l'activation du tunnel Minikube a été nécessaire pour exposer l'adresse IP de l'Ingress au réseau local de l'hôte.
 
-DNS Local : Mise à jour du fichier /etc/hosts pour faire pointer le nom de domaine personnalisé vers le cluster.
 
 ### Guide de Déploiement 
 Pré-requis
