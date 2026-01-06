@@ -66,24 +66,22 @@ Tunneling : Sur macOS, l'activation du tunnel Minikube a été nécessaire pour 
 
 DNS Local : Mise à jour du fichier /etc/hosts pour faire pointer le nom de domaine personnalisé vers le cluster.
 
-🛠 Guide de Déploiement 
+### Guide de Déploiement 
 Pré-requis
 Docker Desktop & Minikube installés.
+L'application utilise des images Docker pré-construites et hébergées sur Docker Hub. Il n'est pas nécessaire de compiler le code source pour lancer le projet.
 
-Accès Internet (pour le pull des images depuis Docker Hub).
+Images utilisées :
 
-Installation
-Démarrer le cluster : minikube start --addons=ingress
+ilyanagolmi/k8s-front:v1
 
-Déployer les ressources : kubectl apply -f k8s/
+ilyanagolmi/k8s-back:v3
 
-Lancer l'accès réseau : minikube tunnel (dans un terminal dédié)
+mongo:latest (image officielle)
+Suivez les etapes: 
+- kubectl apply -f .
+- kubectl get pods -n projet-etudiant
+- minikube service frontend-service -n projet-etudiant
 
-Configuration DNS : Ajouter 127.0.0.1 mon-projet.local au fichier /etc/hosts.
-
-Vérification
-Interface Web : Consulter http://mon-projet.local
-
-Statut des Pods : kubectl get pods -n projet-etudiant
-
-Logs Backend : kubectl logs -l app=backend -n projet-etudiant
+![db](db.png)
+![Run](Run.png)
