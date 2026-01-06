@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: tonpseudo/k8s-back:v1 # <--- REMPLACE ICI
+        image: ilyanagolmi/k8s-back:v3
         ports:
         - containerPort: 5000
         env:

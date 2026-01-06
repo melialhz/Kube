@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: react-app
-        image: tonpseudo/k8s-front:v1 # <--- REMPLACE ICI
+        image: ilyanagolmi/k8s-front:v1
         ports:
         - containerPort: 80
 ---
